@@ -63,7 +63,7 @@ header .btn:hover{
 #loginModal .modal-header h3 img{
 	margin-top: -10px;
 }
-#loginModal .modal-body form button{
+#loginModal .modal-body form button, button.register{
 	background: #003366;
 	transition: background .5s ease;
 }
