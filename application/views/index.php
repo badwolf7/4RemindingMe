@@ -1,73 +1,8 @@
+<?php include 'templates/header.php' ?>
 			<main class="home">
 				<section class="row">
 					<h2>Scheduled messages delivered via text or email</h2>
-					<div class="formBG">
-						<form class="landingMsg col-md-12" action="" method="post" role="form">
-							<div class="contactGroup form-group col-md-2">
-								<select id="method" class="method form-control" name="method" required>
-									<option onchange="method(1)" value="1" selected>Cell Number</option>
-									<option onchange="method(2)" value="2">Email Address</option>
-								</select>
-								<input class="form-control" type="text" name="contact" required>
-								<ul class="textHint">
-									<li>
-										<small>12344567890</small>
-									</li>
-									<li>
-										<small>or 123-456-7890</small>
-									</li>
-									<li>
-										<small>or even (123) 456-7890</small>
-									</li>
-								</ul>
-								<ul class="emailHint">
-									<li>
-										<small>your@email.com</small>
-									</li>
-								</ul>
-							</div>
-							<div class="form-group carrierGroup col-md-2">
-								<label>Carrier</label>
-								<select class="carriers form-control" name="carrier" required>
-									<option selected></option>
-									<?php foreach($carriers as $carrier){ ?>
-									<?php echo '<option value='.$carrier['address'].'>'.$carrier['carrier'].'</option>' ?>
-									<?php } ?>
-								</select>
-							</div>
-							<div class="form-group col-md-2">
-								<label>Date &amp; Time</label>
-								<input class="form-control" type="text" name="dateTime" required>
-								<ul>
-									<li>
-										<small>now</small>
-									</li>
-									<li>
-										<small>or today 3pm</small>
-									</li>
-									<li>
-										<small>or even 11/11/14 7am</small>
-									</li>
-								</ul>
-							</div>
-							<div class="form-group col-md-4">
-								<label>Message</label>
-								<input class="form-control" type="text" name="message" required>
-								<ul>
-									<li>
-										<small>get groceries</small>
-									</li>
-									<li>
-										<small>or Happy Birthday! Love Holly</small>
-									</li>
-									<li>
-										<small>or even WAKE UP!!!</small>
-									</li>
-								</p>
-							</div>
-							<button class="btn btn-primary col-md-2">Send</button>
-						</form>
-					</div>
+					<?php include 'templates/messageForm.php' ?>
 				</section>
 				<section class="about row">
 					<article class="col-md-5 col-md-offset-1">
@@ -90,7 +25,7 @@
 					</article>
 				</section>
 				<section class="doDont row">
-					<article class="col-xs-10 col-md-offset-1">
+					<article class="col-xs-11 col-xs-offset-1">
 						<h3>Do</h3>
 						<ul>
 							<li>Remind yourself when your bills are due.</li>
@@ -99,7 +34,7 @@
 							<li>Or maybe you want an excuse to get out of a bad date, just send yourself a message during the date and bam you're free</li>
 						</ul>
 					</article>
-					<article class="col-md-10 col-md-offset-1 text-right">
+					<article class="col-xs-11 text-right">
 						<h3>Don't</h3>
 						<ul>
 							<li>Send messages to numbers that don't exist</li>
@@ -110,3 +45,4 @@
 					</article>
 				</section>
 			</main>
+<?php include 'templates/footer.php' ?>

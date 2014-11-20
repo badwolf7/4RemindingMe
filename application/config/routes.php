@@ -39,6 +39,9 @@
 */
 
 
+$route['login'] = 'ajax/login';
+$route['logout'] = 'ajax/logout';
+$route['register'] = 'ajax/register';
 $route['sendMsg'] = 'ajax/sendMsg';
 $route['(:any)'] = 'pages/$1';
 $route['default_controller'] = "pages/index";

@@ -1,3 +1,4 @@
+<?php include 'templates/header.php' ?>
 			<main>
 				<h2>Style Guide</h2>
 				<section>
@@ -28,3 +29,4 @@
 					</table>
 				</section>
 			</main>
+<?php include 'templates/footer.php' ?>

@@ -6,21 +6,34 @@ class Pages extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('javascript');
 		$this->load->model('carriers_model');
-		// $this->load->library('session');
+		$this->load->model('messages_model');
+		$this->load->library('session');
 	}
 	public function index($page = 'home'){
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 		$data['carriers'] = $this->carriers_model->get_carriers();
-		$this->load->view('templates/head', $data);
-		$this->load->view('templates/header');
+		$data['logged_in'] = $this->session->userdata('logged_in');
+
 		$this->load->view('index', $data);
-		$this->load->view('templates/footer');
 	}
 	public function style($page = 'style'){
 		$data['title'] = ucfirst($page); // Capitalize the first letter
-		$this->load->view('templates/head', $data);
-		$this->load->view('templates/header');
-		$this->load->view('style');
-		$this->load->view('templates/footer');
+		$data['logged_in'] = $this->session->userdata('logged_in');
+
+		$this->load->view('style', $data);
+	}
+	public function dash($page = 'dashboard'){
+		$data['title'] = ucfirst($page); // Capitalize the first letter
+		$data['carriers'] = $this->carriers_model->get_carriers();
+		$logged_in = $this->session->userdata('logged_in');
+		$data['logged_in'] = $logged_in;
+		$data['messages'] = $this->messages_model->get_messages();
+		$data['user'] = $this->session->userdata('username');
+
+		if($logged_in){
+			$this->load->view('dash', $data);
+		}else{
+			redirect('/', 'refresh');
+		}
 	}
 }

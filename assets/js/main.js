@@ -10,7 +10,9 @@ window.onload = function(){
 			$('.carrierGroup').css({
 				'display':'initial'
 			});
+			$('.carrierGroup .form-control').prop('disabled','false');
 			$('.contactGroup').removeClass('col-md-offset-1');
+			$('.landContact').prop('type','text');
 		}else{
 			$('.textHint').css({
 				'display':'none'
@@ -21,21 +23,17 @@ window.onload = function(){
 			$('.carrierGroup').css({
 				'display':'none'
 			});
+			$('.carrierGroup .form-control').prop('disabled','true');
 			$('.contactGroup').addClass('col-md-offset-1');
+			$('.landContact').prop('type','email');
 		}
 	});
-
-	var tz = jstz.determine(), // Determines the time zone of the browser client
-		timezone = tz.name(), //'Asia/Kolhata' for Indian Time.
-		timezoneCode;
-	console.log(tz.name());
-
-	var yyyy = new Date().getFullYear(),
-		mm = new Date().getMonth(),
-		dd = new Date().getDate(),
-		hh = new Date().getHours(),
-		min = new Date().getMinutes(),
-		ss = new Date().getSeconds();
-		mm++;
-	console.log(yyyy+'-'+mm+'-'+dd+' '+hh+':'+min+':'+ss);
+	$('.newUser').click(function(){
+		$('#loginModal').modal('toggle');
+		$('#registerModal').modal('toggle');
+	});
+	var footerHeight = $('footer').height();
+	$('.push').css({
+		'height':footerHeight
+	});
 }
