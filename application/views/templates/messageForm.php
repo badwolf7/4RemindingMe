@@ -1,8 +1,10 @@
 <div class="formBG">
 	<form class="landingMsg col-md-12" action="" method="post" role="form">
-		<?php if($logged_in){ ?>
+		<?php if($logged_in) : ?>
 		<input type="hidden" value="<?php echo $user ?>" name="username">
-		<? } ?>
+		<?php else : ?>
+		<input type="hidden" value="landing" name="username">
+		<?php endif; ?>
 		<div class="contactGroup form-group col-md-2">
 			<select id="method" class="method form-control" name="method" required>
 				<option onchange="method(1)" value="1" selected>Cell Number</option>

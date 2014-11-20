@@ -12,7 +12,8 @@ class Pages extends CI_Controller {
 	public function index($page = 'home'){
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 		$data['carriers'] = $this->carriers_model->get_carriers();
-		$data['logged_in'] = $this->session->userdata('logged_in');
+		$logged_in = $this->session->userdata('logged_in');
+		$data['logged_in'] = $logged_in;
 
 		$this->load->view('index', $data);
 	}

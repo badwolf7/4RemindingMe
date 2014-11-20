@@ -2,7 +2,7 @@
 			<main class="home">
 				<section class="row">
 					<h2>Scheduled messages delivered via text or email</h2>
-					<?php include 'templates/messageForm.php' ?>
+					<p><?php include 'templates/messageForm.php' ?></p>
 				</section>
 				<section class="about row">
 					<article class="col-md-5 col-md-offset-1">
